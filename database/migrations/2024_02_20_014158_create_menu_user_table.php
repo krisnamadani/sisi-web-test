@@ -11,17 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('users', function (Blueprint $table) {
-            $table->string('id_user', 30)->primary();
-            $table->string('nama_user', 60);
-            $table->string('username', 60);
-            $table->string('password', 255);
-            $table->string('email', 200);
-            $table->string('no_hp', 30);
-            $table->string('wa', 30);
-            $table->string('pin', 30);
-            $table->string('id_jenis_user', 3);
-            $table->string('status_user', 30);
+        Schema::create('menu_user', function (Blueprint $table) {
+            $table->integer('no_seting')->primary();
+            $table->string('id_user', 30)->foreign('id_user')->references('id_user')->on('users');
+            $table->string('menu_id', 3)->foreign('menu_id')->references('menu_id')->on('menu');
             $table->string('delete_mark', 1);
             $table->string('create_by', 30);
             $table->timestamp('create_date');
@@ -35,6 +28,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('users');
+        Schema::dropIfExists('menu_user');
     }
 };

@@ -11,17 +11,13 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('users', function (Blueprint $table) {
-            $table->string('id_user', 30)->primary();
-            $table->string('nama_user', 60);
-            $table->string('username', 60);
-            $table->string('password', 255);
-            $table->string('email', 200);
-            $table->string('no_hp', 30);
-            $table->string('wa', 30);
-            $table->string('pin', 30);
-            $table->string('id_jenis_user', 3);
-            $table->string('status_user', 30);
+        Schema::create('menu', function (Blueprint $table) {
+            $table->string('menu_id', 3)->primary();
+            $table->string('id_level', 3)->foreign('id_level')->references('id_level')->on('menu_level');
+            $table->string('menu_name', 300);
+            $table->string('menu_link', 300);
+            $table->string('menu_icon', 300);
+            $table->string('parent_id', 30);
             $table->string('delete_mark', 1);
             $table->string('create_by', 30);
             $table->timestamp('create_date');
@@ -35,6 +31,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('users');
+        Schema::dropIfExists('menu');
     }
 };

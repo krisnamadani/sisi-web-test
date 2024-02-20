@@ -52,4 +52,10 @@ Route::middleware(['auth'])->group(function () {
     Route::put('/menu/update', 'App\Http\Controllers\MenuController@update')->name('menu.update');
     Route::delete('/menu/{id}/destroy', 'App\Http\Controllers\MenuController@destroy')->name('menu.destroy');
 
+    Route::get('/menu-user', 'App\Http\Controllers\MenuUserController@index')->name('menu-user');
+    Route::get('/menu-user/get', 'App\Http\Controllers\MenuUserController@get')->name('menu-user.get');
+    Route::post('/menu-user/store', 'App\Http\Controllers\MenuUserController@store')->name('menu-user.store');
+    Route::get('/menu-user/{id}/edit', 'App\Http\Controllers\MenuUserController@edit')->name('menu-user.edit');
+    Route::put('/menu-user/update', 'App\Http\Controllers\MenuUserController@update')->name('menu-user.update');
+    Route::delete('/menu-user/{id}/destroy', 'App\Http\Controllers\MenuUserController@destroy')->name('menu-user.destroy');
 });

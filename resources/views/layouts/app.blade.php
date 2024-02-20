@@ -41,6 +41,7 @@
                 <span class="hide-menu">Dashboard</span>
               </a>
             </li>
+            @if(auth()->user()->id_jenis_user == 1)
             <li class="sidebar-item">
               <a class="sidebar-link" href="{{ route('user') }}" aria-expanded="false">
                 <span>
@@ -65,6 +66,26 @@
                 <span class="hide-menu">Menu</span>
               </a>
             </li>
+            <li class="sidebar-item">
+              <a class="sidebar-link" href="{{ route('menu-user') }}" aria-expanded="false">
+                <span>
+                  <i class="ti ti-server"></i>
+                </span>
+                <span class="hide-menu">Menu User</span>
+              </a>
+            </li>
+            @endif
+            @php $user_menu = App\Models\MenuUser::where('id_user', auth()->user()->id_user)->with('menu')->get() @endphp
+            @foreach ($user_menu as $menu)
+            <li class="sidebar-item">
+              <a class="sidebar-link" href="{{ $menu->menu->menu_link }}" aria-expanded="false">
+                <span>
+                  <i class="{{ $menu->menu->menu_icon }}"></i>
+                </span>
+                <span class="hide-menu">{{ $menu->menu->menu_name }}</span>
+              </a>
+            </li>
+            @endforeach
           </ul>
         </nav>
         <!-- End Sidebar navigation -->

@@ -14,4 +14,14 @@ class MenuUser extends Model
     public $incrementing = false;
     public $timestamps = false;
     protected $guarded = [];
+
+    public function user()
+    {
+        return $this->belongsTo(User::class, 'id_user', 'id_user');
+    }
+
+    public function menu()
+    {
+        return $this->belongsTo(Menu::class, 'menu_id', 'menu_id');
+    }
 }

@@ -11,6 +11,7 @@ class MenuLevel extends Model
 
     protected $table = 'menu_level';
     protected $primaryKey = 'id_level';
+    public $incrementing = false;
     public $timestamps = false;
     protected $guarded = [];
 }

@@ -11,6 +11,12 @@ class Menu extends Model
 
     protected $table = 'menu';
     protected $primaryKey = 'menu_id';
+    public $incrementing = false;
     public $timestamps = false;
     protected $guarded = [];
+
+    public function menu_level()
+    {
+        return $this->belongsTo(MenuLevel::class, 'id_level', 'id_level');
+    }
 }

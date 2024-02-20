@@ -11,6 +11,7 @@ class MenuUser extends Model
 
     protected $table = 'menu_user';
     protected $primaryKey = 'no_seting';
+    public $incrementing = false;
     public $timestamps = false;
     protected $guarded = [];
 }

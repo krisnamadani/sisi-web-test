@@ -12,6 +12,10 @@ class User extends Authenticatable
 {
     use HasApiTokens, HasFactory, Notifiable;
 
+    protected $primaryKey = 'id_user';
+    public $incrementing = false;
+    public $timestamps = false;
+
     /**
      * The attributes that are mass assignable.
      *
@@ -36,4 +40,8 @@ class User extends Authenticatable
     protected $casts = [
         'password' => 'hashed',
     ];
+
+    // id jenis user
+    // 1 = admin
+    // 2 = user
 }

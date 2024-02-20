@@ -11,6 +11,7 @@ class IErrorApplication extends Model
 
     protected $table = 'i_error_application';
     protected $primaryKey = 'error_id';
+    public $incrementing = false;
     public $timestamps = false;
     protected $guarded = [];
 }

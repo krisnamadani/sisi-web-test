@@ -11,6 +11,7 @@ class UserActivity extends Model
 
     protected $table = 'no_activity';
     protected $primaryKey = 'id';
+    public $incrementing = false;
     public $timestamps = false;
     protected $guarded = [];
 }

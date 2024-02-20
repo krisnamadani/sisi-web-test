@@ -34,7 +34,7 @@
               <span class="hide-menu">Menu</span>
             </li>
             <li class="sidebar-item">
-              <a class="sidebar-link" href="#" aria-expanded="false">
+              <a class="sidebar-link" href="{{ route('dashboard') }}" aria-expanded="false">
                 <span>
                   <i class="ti ti-layout-dashboard"></i>
                 </span>
@@ -42,7 +42,7 @@
               </a>
             </li>
             <li class="sidebar-item">
-              <a class="sidebar-link" href="#" aria-expanded="false">
+              <a class="sidebar-link" href="{{ route('user') }}" aria-expanded="false">
                 <span>
                   <i class="ti ti-user"></i>
                 </span>
@@ -50,11 +50,19 @@
               </a>
             </li>
             <li class="sidebar-item">
-              <a class="sidebar-link" href="#" aria-expanded="false">
+              <a class="sidebar-link" href="{{ route('menu-level') }}" aria-expanded="false">
                 <span>
                   <i class="ti ti-server"></i>
                 </span>
-                <span class="hide-menu">Water Data</span>
+                <span class="hide-menu">Menu Level</span>
+              </a>
+            </li>
+            <li class="sidebar-item">
+              <a class="sidebar-link" href="{{ route('menu') }}" aria-expanded="false">
+                <span>
+                  <i class="ti ti-server"></i>
+                </span>
+                <span class="hide-menu">Menu</span>
               </a>
             </li>
           </ul>
@@ -89,7 +97,7 @@
                       <i class="ti ti-user fs-6"></i>
                       <p class="mb-0 fs-3">My Profile</p>
                     </a>
-                    <a href="#" class="btn btn-outline-primary mx-3 mt-2 d-block">Logout</a>
+                    <a href="{{ route('logout') }}" class="btn btn-outline-primary mx-3 mt-2 d-block">Logout</a>
                   </div>
                 </div>
               </li>
